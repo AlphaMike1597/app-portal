@@ -21,7 +21,7 @@ const router = createRouter({
       component: UsersLayout,
       children:[
         {
-          path: 'new',
+          path: 'new-user',
           component: () => import('../views/users/NewUserLayout.vue'),
           children: [
             {
