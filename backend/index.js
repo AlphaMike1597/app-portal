@@ -6,6 +6,8 @@ import { db } from './config/db.js';
 import userRoutes from './routes/userRoutes.js';
 import ContactRoutes from './routes/contactRoutes.js'
 import supplierRoutes from './routes/supplierRoutes.js'
+import authRoutes from './routes/authRoutes.js'
+
 
 //Variables de entorno
 dotenv.config();
@@ -21,7 +23,7 @@ app.use(express.json());
 db();
 
 //Configurar CORS
-const whitelist = [process.env.FRONTEND_URL]
+const whitelist = [process.env.FRONTEND_URL, undefined]
 
 const corsOptions = {
     origin: function(origin, callback){
@@ -39,7 +41,9 @@ app.use(cors(corsOptions))
 //Definir la ruta
 app.use('/api/user', userRoutes);
 app.use('/api/contact', ContactRoutes);
-app.use('/api/supplier', supplierRoutes)
+app.use('/api/supplier', supplierRoutes);
+app.use('/api/auth', authRoutes);
+
 
 //Definir puerto
 const PORT = process.env.PORT || 4000

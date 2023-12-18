@@ -17,4 +17,6 @@ function handleNotFoundError(message, res){
     });
 }
 
-export {validateObjectId, handleNotFoundError}
+const uniqueId = () => Date.now().toString(32) + Math.random().toString(32).substring(2);
+
+export {validateObjectId, handleNotFoundError, uniqueId}
