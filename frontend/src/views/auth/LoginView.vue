@@ -1,5 +1,4 @@
 <script>
-
 </script>
 <template>
   <div class="md:flex h-screen">
@@ -44,6 +43,5 @@
   </div>
 </div>
     </div>
-
   </div>
 </template>
